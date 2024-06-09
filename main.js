@@ -1,6 +1,7 @@
 import "./src/state";
 
-import "./src/styles/style.scss";
-import names from "./src/assets/names.json";
+import image from "./src/assets/box-culvert.svg";
+import imageRaw from "./src/assets/box-culvert.svg?raw";
 
-console.log(names);
+console.log(image);
+console.log(imageRaw);
