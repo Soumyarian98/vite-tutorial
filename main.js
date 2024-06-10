@@ -1,12 +1,4 @@
-const modules = import.meta.glob("./src/*.js");
+// const modules = import.meta.glob("./src/*.js", { as: "raw", eager: true });
+const modules = import.meta.glob("./src/*.js", { as: "url", eager: true });
 
 console.log(modules);
-
-document.addEventListener("click", () => {
-  Object.values(modules).forEach(module => {
-    module().then(data => {
-      // "data" will be a object with the exported values from the module
-      console.log(data);
-    });
-  });
-});
