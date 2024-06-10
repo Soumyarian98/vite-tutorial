@@ -1,7 +1,12 @@
-import "./src/state";
+const modules = import.meta.glob("./src/*.js");
 
-import image from "./src/assets/box-culvert.svg";
-import imageRaw from "./src/assets/box-culvert.svg?raw";
+console.log(modules);
 
-console.log(image);
-console.log(imageRaw);
+document.addEventListener("click", () => {
+  Object.values(modules).forEach(module => {
+    module().then(data => {
+      // "data" will be a object with the exported values from the module
+      console.log(data);
+    });
+  });
+});
